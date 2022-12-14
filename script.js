@@ -1,14 +1,10 @@
 const BASE_URL = "https://cats.petiteweb.dev/api/single/AllieHub";
-const container = document.querySelector(".container");
+const container = document.querySelector(".wraper");
 
 const renderCat = ({ name, image, age, rate, description }) => {
   return `
-          <div class="card">
-        <img
-          class="card__avatar"
-          src="${image}"
-          alt=""
-        />
+        <div class="card">
+        <img class="card__avatar" src="${image}" alt="" />
         <div class="card__info">
           <p><b>Имя кота:</b> ${name}</p>
           <p><b>Рейтинг:</b> ${rate}</p>

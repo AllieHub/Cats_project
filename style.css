@@ -41,21 +41,38 @@
 /**/
 
 .container {
-  max-width: 500px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
+}
+
+.caption {
+  font-size: 25px;
+  font-weight: 700;
+  padding: 25px 15px 10px 15px;
+  text-align: center;
+}
+
+.wraper {
+  display: flex;
+  flex-wrap: wrap;
   margin: 20px;
+  justify-content: center;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 350px;
   border: 1px solid darkslategrey;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 15px;
+  margin-right: 15px;
+  flex: 0 0 auto;
 }
 
 .card__avatar {
