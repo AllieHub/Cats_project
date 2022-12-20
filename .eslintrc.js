@@ -11,5 +11,11 @@ module.exports = {
   },
   rules: {
     "no-console": 0,
+    "no-tabs": 0,
+    "linebreak-style": 0,
+    "arrow-body-style": 0,
+    "prefer-destructuring": 0,
+    "no-alert": 0,
+    "consistent-return": 0,
   },
 };
