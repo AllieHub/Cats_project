@@ -228,6 +228,5 @@ button:hover {
   display: flex;
   align-items: center;justify-content: center;
   background-color: rgba(55, 55, 55, 0.603);
-  visibility: hidden;
   backdrop-filter: blur(2px);
 }

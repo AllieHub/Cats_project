@@ -9,7 +9,6 @@ sliderRate.oninput = function () {
 const BASE_URL = "https://cats.petiteweb.dev/api/single/AllieHub";
 
 const container = document.querySelector(".wraper");
-const detailsModal = document.querySelector(".detailed-modal");
 const createCatModal = document.querySelector(".form");
 
 const renderCat = ({ id, name, image, age, rate, description }) => {
@@ -39,19 +38,26 @@ const renderDetals = ({
 }) => {
   const favoriteText = favorite ? "Да" : "Нет";
   return `      
- <div data-cat-details="${id}"class="card">
- <img
-   class="card__avatar"src="${image}"alt=""/>
- <div class="card__info">
-   <p><b>ID кота:</b> ${id}</p>
-   <p><b>Имя кота:</b> ${name}</p>
-   <p><b>Рейтинг:</b> ${rate}</p>
-   <p><b>Возраст:</b> ${age}</p>
-   <p><b>Мой любимый котик:</b> ${favoriteText}</p>
-   <p><b>Описание:</b> ${description}</p>
- </div>
- <button
-   data-action="close-details"id=""type="button"class="btn_details"onclick="closeDetailsModal()">Закрыть</button>
+<div class="detailed-modal">
+  <div class="card">
+    <img class="card__avatar" src="${image}" alt="" />
+    <div class="card__info">
+      <p><b>ID кота:</b> ${id}</p>
+      <p><b>Имя кота:</b> ${name}</p>
+      <p><b>Рейтинг:</b> ${rate}</p>
+      <p><b>Возраст:</b> ${age}</p>
+      <p><b>Мой любимый котик:</b> ${favoriteText}</p>
+      <p><b>Описание:</b> ${description}</p>
+    </div>
+    <button
+      data-action="close-details"
+      type="button"
+      class="btn_details"
+      onclick="closeDetailsModal()"
+    >
+      Закрыть
+    </button>
+  </div>
 </div>
 `;
 };
@@ -73,8 +79,8 @@ const openCreateCatModal = (isOpen) => {
 };
 
 const closeDetailsModal = () => {
-  detailsModal.removeChild(detailsModal.lastElementChild);
-  detailsModal.style.visibility = "hidden";
+  const detailsModal = document.querySelector(".detailed-modal");
+  document.body.removeChild(detailsModal);
 };
 
 container.addEventListener("click", (event) => {
@@ -97,8 +103,7 @@ container.addEventListener("click", (event) => {
       .then((response) => response.json())
       .then((data) => {
         const renderData = renderDetals(data);
-        detailsModal.insertAdjacentHTML("afterbegin", renderData);
-        detailsModal.style.visibility = "visible";
+        document.body.insertAdjacentHTML("afterbegin", renderData);
       })
       .catch(() => {
         alert(`Отобразить кота с id: ${catId} не получилось`);
