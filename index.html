@@ -10,61 +10,11 @@
   </head>
   <body>
     <div class="container">
-      <button class="btn_addcats" onclick="openCreateCatModal(true)">
+      <button class="btn_addcats" onclick="openCreateCatModal()">
         Создать нового котика
       </button>
       <div class="caption">My cats</div>
       <div class="wraper"></div>
-    </div>
-
-    <div class="form">
-      <div class="form__container">
-        <p>Создайте котика</p>
-        <form name="formAddCat">
-          <div class="form__cats">
-            <label for="">Присвойте id</label>
-            <input type="number" required name="id" min="0" placeholder="id" />
-          </div>
-          <div class="form__cats">
-            <label for="">Имя котика</label>
-            <input type="text" required name="name" placeholder="Имя котика" />
-          </div>
-          <div class="form__cats">
-            <label for="number">Возраст котика</label>
-            <input type="number" name="age" min="0" max="50" placeholder="Возраст" />
-          </div>
-          <div class="form__cats">
-            <label for="">Описание</label>
-            <input type="text" name="description" placeholder="Описание" />
-          </div>
-          <div class="form__cats">
-            <label for="">Вставьте ссылку на картинку с котиком</label>
-            <input type="url" name="image" placeholder="Ссылка на картинку" />
-          </div>
-
-          <div class="form__cats-rate">
-            <label for="">Рейтинг: <span id="rateNumber"></span></label>
-            <input
-              type="range"
-              name="rate"
-              min="1"
-              max="10"
-              value="10"
-              id="inputRateNumber"
-              class="slider-rating"
-            />
-          </div>
-
-          <div class="form__cats-checkbox">
-            <label for="">Любимый котик</label>
-            <input class="checkbox_favorite" type="checkbox" name="favorite" checked/>
-          </div>
-          <div class="form__buttons">
-            <button class="btn_submit" id="submit" type="submit">Сохранить</button>
-            <button class="btn_cancel red" type="button" onclick="openCreateCatModal(false)" >Отменить</button>
-          </div>
-        </form>
-      </div>
     </div>
   </body>
 </html>

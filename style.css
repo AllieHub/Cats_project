@@ -105,10 +105,13 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   backdrop-filter: blur(2px);
+}
+
+.hidden {
+  display: none;
 }
 
 .form__container {
