@@ -78,7 +78,7 @@ const renderDetals = (cat) => {
   return `      
 <div class="detailed-modal">
   <div class="card">
-    <img class="card__avatar" src="${image}" alt="" />
+    <img class="card__avatar" src="${image || DEFAULT_AVATAR}" alt="" />
     <div class="card__info">
       <p><b>ID кота:</b> ${id}</p>
       <p><b>Имя кота:</b> ${name}</p>
@@ -89,7 +89,7 @@ const renderDetals = (cat) => {
     </div>
     <div class="card__buttons">
     <button type="button" onclick="changeCat()">Изменить</button>
-    <button type="button" onclick="closeDetailsModal()">Закрыть</button>
+    <button type="button" class="red" onclick="closeDetailsModal()">Закрыть</button>
     </div>
   </div>
 </div>
