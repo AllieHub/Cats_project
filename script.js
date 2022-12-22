@@ -18,7 +18,7 @@ const renderCatForm = (isCreate) => {
         </div>
         <div class="form__cats">
           <label for="">Имя котика</label>
-          <input type="text" required name="name" placeholder="Имя котика" />
+          <input type="text" required name="name" placeholder="Имя котика" ${!isCreate && 'readonly'} />
         </div>
         <div class="form__cats">
           <label for="number">Возраст котика</label>
