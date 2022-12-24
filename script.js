@@ -55,15 +55,15 @@ const renderCat = ({
   id, name, image, rate,
 }) => {
   return `
-    <div data-cat-id="${id}" class="card">
-        <img class="card__avatar" src="${image || DEFAULT_AVATAR}" alt="" />
+    <div data-cat-id="${id}"  class="card">
+        <img data-action="details" class="card__avatar" src="${image || DEFAULT_AVATAR}" alt="" />
         <div class="card__info">
           <p><b>Имя кота:</b> ${name}</p>
           <p><b>Рейтинг:</b> ${rate}</p>
         </div>
       <div class="card__buttons">
-        <button data-action="details" id="" type="button" class="btn_details">Детали</button>
-        <button data-action="delete" id="" type="button" class="btn_delete red">Удалить</button>
+        <button data-action="details" type="button" class="btn_details">Детали</button>
+        <button data-action="delete" type="button" class="btn_delete red">Удалить</button>
       </div>
     </div>
     `;
